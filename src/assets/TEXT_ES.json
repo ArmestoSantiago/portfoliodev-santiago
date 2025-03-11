@@ -9,6 +9,8 @@
   "institute": "Instituto de Educación Superior N° 7",
   "location": "Venado Tuerto, Argentina",
   "weatherErrorMessage": "Activa ubicación para detalles del tiempo.",
+  "failFetch": "Error al buscar información del tiempo, intenta de nuevo más tarde.",
+  "failFetch2": "Tuvimos un error inesperado al recuperar la información. Estamos trabajando en eso.",
   "english": "INGLÉS",
   "level": "C2",
   "organization": "EF SET",

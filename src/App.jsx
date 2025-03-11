@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { CvIncon, DownloadArrow, ExternalArrow, GitHubIcon, LinkedinIcon, LocationIcon, MailIcon } from './components/icons';
+import { CvIncon, DownloadArrow, ExternalArrow, GitHubIcon, HammerIcon, LinkedinIcon, LocationIcon, MailIcon } from './components/icons';
 import TEXT_ES from './assets/TEXT_ES.json';
 import TEXT_EN from './assets/TEXT_EN.json';
 import { Tecnologies } from './components/Tecnologies';
 import { getWeatherAndCity } from './services/getWeatherAndCity';
-import { Oval, TailSpin } from 'react-loader-spinner';
+import { TailSpin } from 'react-loader-spinner';
 
 export function App() {
   const [language, setLanguage] = useState(true);
@@ -125,7 +125,8 @@ export function App() {
           wrapperStyle={{}}
           wrapperClass=""
         />}
-        {!location && !loading && <p className='text-gold text-center font-semibold pl-1 pr-1 text-lg'>{texts.errorMessage}</p>}
+        {error && <p className='text-gold text-center'>{texts.failFetch}</p>}
+        {!location && !loading && !error && <p className='text-gold text-center font-semibold pl-1 pr-1 text-lg'>{texts.errorMessage}</p>}
         {location && <p className='text-1xl'>{texts.headerWelcomeMessage}</p>}
         {city && !loading && <p className='text-gold text-4xl font-semibold'>{city}</p>}
       </div>
@@ -140,7 +141,13 @@ export function App() {
           wrapperStyle={{}}
           wrapperClass=""
         />}
-        {!loading && !location && <>
+        {error &&
+          <>
+            <HammerIcon />
+            <p className='text-center'>{texts.failFetch2}</p>
+          </>
+        }
+        {!loading && !error && !location && <>
           <LocationIcon lightsOn={lightsOn} />
           <p>{texts.weatherErrorMessage}</p>
         </>

@@ -9,6 +9,8 @@
   "institute": "Instituto de Educación Superior N° 7",
   "location": "Venado Tuerto, Argentina",
   "weatherErrorMessage": "Enable location for weather details.",
+  "failFetch": "Error in loading weather data, try again later",
+  "failFetch2": "We encountered an unexpected error while retrieving the information. We are working on it.",
   "english": "ENGLISH",
   "level": "C2",
   "organization": "EF SET",
