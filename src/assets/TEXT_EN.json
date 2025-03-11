@@ -1,0 +1,15 @@
+{
+  "lang": "EN",
+  "nameHeader": "Hello, I'm",
+  "name": "Santiago Armesto",
+  "about": "I am a Full Stack developer with a strong interest in working on real-world projects. My goal is to be part of a team that, regardless of its field, stands out for making a positive social impact through its daily work.",
+  "errorMessage": "Oops! Please enable location for a proper welcome.",
+  "headerWelcomeMessage": "Hello, my friend from",
+  "degree": "Higher Technician in Software Development",
+  "institute": "Institute of Higher Education No. 7",
+  "english": "ENGLISH",
+  "level": "C2",
+  "organization": "EF SET",
+  "age": 28,
+  "ageText": "YEARS OLD"
+}
