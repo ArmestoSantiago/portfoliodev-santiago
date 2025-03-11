@@ -7,6 +7,8 @@
   "headerWelcomeMessage": "Hola, mi amig@ de",
   "degree": "Técnico superior en desarrollo de Software",
   "institute": "Instituto de Educación Superior N° 7",
+  "location": "Venado Tuerto, Argentina",
+  "weatherErrorMessage": "Activa ubicación para detalles del tiempo.",
   "english": "INGLÉS",
   "level": "C2",
   "organization": "EF SET",

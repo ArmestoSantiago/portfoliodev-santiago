@@ -11,4 +11,7 @@
   --color-gold: #e5cc2d;
   --color-green: #087f5b;
   --color-darkgrey: #1c1d1d;
+
+  /* white mode */
+  --color-background-light: #f7f2f2;
 }
