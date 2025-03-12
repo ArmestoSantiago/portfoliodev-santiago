@@ -4,7 +4,6 @@ import TEXT_ES from './assets/TEXT_ES.json';
 import TEXT_EN from './assets/TEXT_EN.json';
 import { Tecnologies } from './components/Tecnologies';
 import { getWeatherAndCity } from './services/getWeatherAndCity';
-import { TailSpin } from 'react-loader-spinner';
 import './queries.css';
 
 export function App() {
