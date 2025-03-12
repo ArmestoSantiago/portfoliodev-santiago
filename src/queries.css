@@ -2,14 +2,14 @@
   height: 100vh;
 }
 
-@media (width < 800px) {
+@media (width < 50rem) {
   .responsive-main-grid {
     grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     margin: 5px 5px 5px 5px;
     aspect-ratio: auto;
     height: auto;
-    width: 300px;
+    width: 18.75rem;
   }
   .responsive-about-card {
     grid-column: 1 / 5;
@@ -17,13 +17,13 @@
   }
 
   .responsive-signature {
-    top: 250px;
+    top: 15.625rem;
     left: 50%;
     transform: translateX(-25%);
   }
 
   .responsive-about-text {
-    font-size: 22px;
+    font-size: 1.37rem;
   }
 
   .responsive-toggler-container {
