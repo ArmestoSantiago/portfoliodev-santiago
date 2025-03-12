@@ -53,15 +53,15 @@ export function App() {
     <main className={`${lightsOn ? 'bg-background-light text-black' : 'bg-background-dark text-white'} duration-300 aspect-4/6 grid grid-cols-4 grid-rows-6 gap-4 max-w-7xl ml-auto mr-auto responsive-main-grid`} >
       <div className={`col-span-3 ${lightsOn ? 'bg-white' : 'bg-black'} row-span-2 aspect-auto rounded-3xl border-darkgrey border-solid border-1 duration-300 responsive-about-card responsive-card`}>
         <div className='pl-8 pt-8'>
-          <div className='flex gap-22 items-center responsive-container-name-img '>
+          <div className='flex gap-22 items-center mb-15 responsive-container-name-img '>
             <div>
-              <p className='text-2xl'>{texts.nameHeader}</p>
-              <h2 className='text-3xl font-semibold text-gold pb-4'>{texts.name}</h2>
+              <p className='text-4xl'>{texts.nameHeader}</p>
+              <h2 className='text-5xl font-semibold text-gold pb-4'>{texts.name}</h2>
             </div>
             <img className='w-32 rounded-full border-darkgrey border-1' src="/thumbnail.jpeg" alt="Santiago thumbnail" />
           </div>
-          <p className='text-lg responsive-about-text'>{texts.about}</p>
-          <img className="scale-75 absolute top-50 z-50 responsive-signature" src="/signature.png" alt="signature" />
+          <p className='text-2xl max-w-600 responsive-about-text'>{texts.about}</p>
+          <img className="scale-75 absolute top-70 z-50 responsive-signature" src="/signature.png" alt="signature" />
         </div>
       </div>
       <div className={`flex items-center aspect-square justify-center rounded-3xl ${lightsOn ? 'bg-white' : 'bg-black'} border-darkgrey border-solid border-1 duration-300 responsive-toggler-container`}>
