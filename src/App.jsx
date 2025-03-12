@@ -98,7 +98,7 @@ export function App() {
         <div className={`absolute top-2 right-2 w-6 ${lightsOn ? 'bg-black' : 'bg-white'} flex items-center justify-center h-6 rounded-3xl`}>
           <DownloadArrow lightsOn={lightsOn} />
         </div>
-        <a className='w-full h-full flex items-center justify-center' href='src/assets/CV_SantiagoArmesto.pdf' target='_blank' aria-label='curriculum' rel="noreferrer">
+        <a className='w-full h-full flex items-center justify-center' href='/CV_SantiagoArmesto.pdf' target='_blank' aria-label='curriculum' rel="noreferrer">
           <CvIncon lightsOn={lightsOn} />
         </a>
       </div>
