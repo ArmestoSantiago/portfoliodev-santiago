@@ -1,0 +1,41 @@
+.responsive-main-grid {
+  height: 100vh;
+}
+
+@media (width < 800px) {
+  .responsive-main-grid {
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin: 5px 5px 5px 5px;
+    aspect-ratio: auto;
+    height: auto;
+    width: 300px;
+  }
+  .responsive-about-card {
+    grid-column: 1 / 5;
+
+  }
+
+  .responsive-signature {
+    top: 250px;
+    left: 50%;
+    transform: translateX(-25%);
+  }
+
+  .responsive-about-text {
+    font-size: 22px;
+  }
+
+  .responsive-toggler-container {
+    grid-row: 4;
+    grid-column: 4;
+  }
+  .responsive-language-container {
+    grid-row: 5;
+    grid-column: 4;
+  }
+
+  .responsive-tecnologies-container {
+    grid-column: 1/4;
+  }
+}

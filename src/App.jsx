@@ -5,6 +5,7 @@ import TEXT_EN from './assets/TEXT_EN.json';
 import { Tecnologies } from './components/Tecnologies';
 import { getWeatherAndCity } from './services/getWeatherAndCity';
 import { TailSpin } from 'react-loader-spinner';
+import './queries.css';
 
 export function App() {
   const [language, setLanguage] = useState(true);
@@ -22,9 +23,9 @@ export function App() {
   };
 
   const handleTurnOnLights = () => {
+    setLightsOn(prevState => !prevState);
     if (lightsOn) document.body.style.backgroundColor = '#121111';
     if (!lightsOn) document.body.style.backgroundColor = '#f7f2f2';
-    setLightsOn(prevState => !prevState);
   };
 
   useEffect(() => {
@@ -51,26 +52,26 @@ export function App() {
   }, []);
 
   return (
-    <main className={`${lightsOn ? 'bg-background-light text-black' : 'bg-background-dark text-white'} duration-300 aspect-4/6 grid grid-cols-4 grid-rows-6 gap-4 max-w-7xl ml-auto h-[calc(100vh)] mr-auto `} >
-      <div className={`col-span-3 ${lightsOn ? 'bg-white' : 'bg-black'} row-span-2 aspect-auto rounded-3xl border-darkgrey border-solid border-1 duration-300`}>
+    <main className={`${lightsOn ? 'bg-background-light text-black' : 'bg-background-dark text-white'} duration-300 aspect-4/6 grid grid-cols-4 grid-rows-6 gap-4 max-w-7xl ml-auto mr-auto responsive-main-grid`} >
+      <div className={`col-span-3 ${lightsOn ? 'bg-white' : 'bg-black'} row-span-2 aspect-auto rounded-3xl border-darkgrey border-solid border-1 duration-300 responsive-about-card responsive-card`}>
         <div className='pl-8 pt-8'>
-          <div className='flex gap-12 items-center '>
+          <div className='flex gap-22 items-center responsive-container-name-img '>
             <div>
-              <p className='text-3xl'>{texts.nameHeader}</p>
-              <h2 className='text-4xl font-semibold text-gold pb-4'>{texts.name}</h2>
+              <p className='text-2xl'>{texts.nameHeader}</p>
+              <h2 className='text-3xl font-semibold text-gold pb-4'>{texts.name}</h2>
             </div>
             <img className='w-32 rounded-full border-darkgrey border-1' src="/thumbnail.jpeg" alt="Santiago thumbnail" />
           </div>
-          <p className='text-2xl'>{texts.about}</p>
-          <img className="scale-75 absolute top-60 z-50" src="/signature.png" alt="signature" />
+          <p className='text-lg responsive-about-text'>{texts.about}</p>
+          <img className="scale-75 absolute top-50 z-50 responsive-signature" src="/signature.png" alt="signature" />
         </div>
       </div>
-      <div className={`flex items-center aspect-square justify-center rounded-3xl ${lightsOn ? 'bg-white' : 'bg-black'} border-darkgrey border-solid border-1 duration-300`}>
+      <div className={`flex items-center aspect-square justify-center rounded-3xl ${lightsOn ? 'bg-white' : 'bg-black'} border-darkgrey border-solid border-1 duration-300 responsive-toggler-container`}>
         <button className='cursor-pointer w-full h-full flex items-center justify-center' onClick={handleTurnOnLights}>
           <img className='w-24' src={lightsOn ? '/moon.png' : '/sun.png'} alt="sun/moon icon"></img>
         </button>
       </div>
-      <div className="flex flex-col gap-2.5 items-center aspect-square justify-center rounded-3xl bg-purple border-darkgrey border-solid border-1 duration-300">
+      <div className="flex flex-col gap-2.5 items-center aspect-square justify-center rounded-3xl bg-purple border-darkgrey border-solid border-1 duration-300 responsive-language-container">
         <button onClick={handleChangeLanguage} className='cursor-pointer'>
           <p className='text-7xl font-bold text-white'>{texts.lang}</p>
         </button>
@@ -79,7 +80,7 @@ export function App() {
           <p className={`${language ? 'text-white' : 'text-gold'}`}>ES</p>
         </div>
       </div>
-      <div className="flex items-center aspect-square justify-center rounded-3xl bg-blue hover:scale-97 duration-300 border-darkgrey border-solid border-1 relative">
+      <div className="flex items-center aspect-square justify-center rounded-3xl bg-blue hover:scale-97 duration-300 border-darkgrey border-solid border-1 relative responsive-linkedin-container">
         <div className='absolute top-2 right-2 w-6 bg-white flex items-center justify-center h-6 rounded-3xl'>
           <ExternalArrow />
         </div>
@@ -111,7 +112,7 @@ export function App() {
           <MailIcon />
         </a>
       </div>
-      <div className="aspect-auto grid grid-cols-4 grid-rows-4 rounded-3xl bg-black col-span-2 row-span-2 border-darkgrey border-solid border-1 duration-300">
+      <div className="aspect-auto grid grid-cols-4 grid-rows-4 rounded-3xl bg-black col-span-2 row-span-2 border-darkgrey border-solid border-1 duration-300 responsive-tecnologies-container">
         <Tecnologies />
       </div>
       <div className={`flex flex-col items-center aspect-auto justify-center rounded-3xl ${lightsOn ? 'bg-white' : 'bg-black'} duration-300 col-span-2 border-darkgrey border-solid border-1`}>
@@ -171,7 +172,7 @@ export function App() {
         </a>
       </div>
       <div className={`flex flex-col items-center aspect-auto justify-center duration-300 rounded-3xl ${lightsOn ? 'bg-white' : 'bg-black'} col-span-2 border-darkgrey border-solid border-1`}>
-        <p className='text-gold text-lg mb-3 font-semibold'>{texts.degree}</p>
+        <p className='text-gold text-lg mb-3 text-center font-semibold'>{texts.degree}</p>
         <p>{texts.institute}</p>
         <p>{texts.location}</p>
       </div>
