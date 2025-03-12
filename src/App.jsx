@@ -11,7 +11,6 @@ export function App() {
   const [language, setLanguage] = useState(true);
   const [lightsOn, setLightsOn] = useState(false);
   const [location, setLocation] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [city, setCity] = useState(null);
   const [temp, setTemp] = useState(null);
@@ -29,7 +28,7 @@ export function App() {
   };
 
   useEffect(() => {
-    setLoading(true);
+
     const onSuccess = async (position) => {
       const { latitude: lat, longitude: lng } = position.coords;
       const data = await getWeatherAndCity({ lat, lng });
@@ -48,7 +47,7 @@ export function App() {
     };
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    setLoading(false);
+
   }, []);
 
   return (
@@ -116,39 +115,21 @@ export function App() {
         <Tecnologies />
       </div>
       <div className={`flex flex-col items-center aspect-auto justify-center rounded-3xl ${lightsOn ? 'bg-white' : 'bg-black'} duration-300 col-span-2 border-darkgrey border-solid border-1`}>
-        {loading && <TailSpin
-          visible={true}
-          height="32"
-          width="32"
-          color="#e5cc2d"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />}
+
         {error && <p className='text-gold text-center'>{texts.failFetch}</p>}
-        {!location && !loading && !error && <p className='text-gold text-center font-semibold pl-1 pr-1 text-lg'>{texts.errorMessage}</p>}
+        {!location && !error && <p className='text-gold text-center font-semibold pl-1 pr-1 text-lg'>{texts.errorMessage}</p>}
         {location && <p className='text-1xl'>{texts.headerWelcomeMessage}</p>}
-        {city && !loading && <p className='text-gold text-4xl font-semibold'>{city}</p>}
+        {city && <p className='text-gold text-4xl font-semibold'>{city}</p>}
       </div>
       <div className={`flex flex-col gap-2 items-center aspect-auto justify-center rounded-3xl duration-300 ${lightsOn ? 'bg-white' : 'bg-black'} col-span-2 border-darkgrey border-solid border-1`}>
-        {loading && <TailSpin
-          visible={true}
-          height="32"
-          width="32"
-          color="#e5cc2d"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />}
+
         {error &&
           <>
             <HammerIcon />
             <p className='text-center'>{texts.failFetch2}</p>
           </>
         }
-        {!loading && !error && !location && <>
+        {!error && !location && <>
           <LocationIcon lightsOn={lightsOn} />
           <p>{texts.weatherErrorMessage}</p>
         </>

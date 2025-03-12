@@ -23,7 +23,6 @@
     "@tailwindcss/postcss": "4.0.12",
     "@vitejs/plugin-react": "4.3.4",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-loader-spinner": "^6.1.6"
+    "react-dom": "19.0.0"
   }
 }
