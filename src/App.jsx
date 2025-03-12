@@ -52,8 +52,8 @@ export function App() {
   return (
     <main className={`${lightsOn ? 'bg-background-light text-black' : 'bg-background-dark text-white'} duration-300 aspect-4/6 grid grid-cols-4 grid-rows-6 gap-4 max-w-7xl ml-auto mr-auto responsive-main-grid`} >
       <div className={`col-span-3 ${lightsOn ? 'bg-white' : 'bg-black'} row-span-2 aspect-auto rounded-3xl border-darkgrey border-solid border-1 duration-300 responsive-about-card responsive-card`}>
-        <div className='pl-8 pt-8'>
-          <div className='flex gap-22 items-center mb-15 responsive-container-name-img '>
+        <div className='pl-8'>
+          <div className='flex gap-18 items-center pt-16 mb-8 responsive-container-name-img '>
             <div>
               <p className='text-4xl'>{texts.nameHeader}</p>
               <h2 className='text-5xl font-semibold text-gold pb-4'>{texts.name}</h2>
